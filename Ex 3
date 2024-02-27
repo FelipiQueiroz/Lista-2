@@ -1,0 +1,23 @@
+// Função para calcular juros simples
+function jurosSimples(capitalInicial, taxaJuros, tempo) {
+    var juros = capitalInicial * taxaJuros * tempo;
+    var montante = capitalInicial + juros;
+    return montante;
+}
+
+// Função para calcular juros compostos
+function jurosCompostos(capitalInicial, taxaJuros, tempo) {
+    var montante = capitalInicial * Math.pow((1 + taxaJuros), tempo);
+    return montante;
+}
+
+// Exemplo de uso:
+var capital = 1000; // Capital inicial
+var taxa = 0.05; // Taxa de juros (5%)
+var tempo = 2; // Tempo de aplicação em anos
+
+var montanteJurosSimples = jurosSimples(capital, taxa, tempo);
+console.log("Montante (Juros Simples): " + montanteJurosSimples);
+
+var montanteJurosCompostos = jurosCompostos(capital, taxa, tempo);
+console.log("Montante (Juros Compostos): " + montanteJurosCompostos);
