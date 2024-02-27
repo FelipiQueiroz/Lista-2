@@ -1,3 +1,15 @@
-function formatarComoReal(valor) {
-    return 'R$' + valor.toFixed(2).replace('.', ',');
+function formatarValorMonetario(valor) {
+    // Arredonda o valor para duas casas decimais
+    var valorFormatado = Math.round(valor * 100) / 100;
+    
+    // Converte o valor para uma string com duas casas decimais
+    valorFormatado = valorFormatado.toFixed(2);
+    
+    // Substitui o ponto pela vírgula
+    valorFormatado = valorFormatado.replace('.', ',');
+    
+    // Adiciona o símbolo de moeda
+    valorFormatado = 'R$ ' + valorFormatado;
+    
+    return valorFormatado;
 }
